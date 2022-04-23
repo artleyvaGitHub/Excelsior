@@ -1,0 +1,331 @@
+
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<br>
+<!-- <table align ="center" border="1" width="80%">
+    <tr>
+        <td></td>
+    </tr>   
+</table> -->
+
+<table align ="center" border="0" width="80%" border-spacing="20px">
+    <tr> 
+        <td rowspan="2" width="70%" ><img width="100%" max-height="100%" src="../../assets/images/carnivalboat.jpg" alt="CarnivalBoat"></td>
+        <td width="30%" >
+            <h1 class="w3-container w3-xxxlarge w3-sofia" align="center" style="color:orange">Welcome</h1><br>
+            <h1 class="tab0"><b>Vacation Packages: Connecting You and the Destination</b></h1>
+            <h3 class="tab0" font-family: Arial>When it comes to vacations, there are as many ways to explore the world as there are people on it. Our family, 
+                honeymoon, or adults-only vacations connect you with each other and your destination. 
+                If you want it all, our all-inclusive or luxury vacations have you covered 
+                at some of the world’s most popular resorts. Do more with our casino or golf and spa vacations. 
+                Take a journey with our exotic vacations. 
+                Whether you’re planning a cruise or a last-minute break to your favorite city—your 
+                <b style="color:purple">Excelsior Travel Agency</b> vacation consultant can match you with a vacation package that’s just your style.</h3>
+            </td>
+    </tr>
+    <tr>
+        <td class="tab0"><button class="w3-panel w3-round-xxlarge w3-red" mat-menu-item><mat-icon color="primary">trip_origin</mat-icon>Start Planning</button></td>
+    </tr>
+</table>
+
+<br>
+<div align="center" class="tab1">
+    <h1 align="center"><b>Vacation Packages</b></h1>
+</div>
+<table align="center">
+    <tr>
+        <td>
+            <!-- 1st -->
+            <section>
+                <mat-card class="example-card">
+                    <div *ngFor = "let cruise of cruises">
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title>
+                        <div align="center" class="w3-panel w3-round-xxlarge w3-orange" >
+                            {{cruise.cruiseLine}} {{cruise.shipName}}
+                        </div>
+                         </mat-card-title>
+                      <mat-card-subtitle class="adjust-line-height" >Departing: {{cruise.From}}</mat-card-subtitle>
+                      <mat-card-subtitle class="adjust-line-height" >Visiting: {{cruise.To}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="../../assets/images/carnivalboat2.jpg" alt="CarnivalBoat">
+                    <mat-card-content>
+                        <h2 class="adjust-line-height" style="text-shadow:1px 1px 0 #444">Carnival Boat an All-Inclusive | Air & Vacation Package</h2>
+                        <h5 class="adjust-line-height" style="color:gray">{{cruise.From}}</h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <h3 class="adjust-line-height" style="color:blue" align="right">{{cruise.dayLength}} days</h3>
+                        <h5 class="adjust-line-height" style="color:green" align="right">Price per adult traveler: {{cruise.pricePerAdult | currency}}</h5>
+                        <h5 class="adjust-line-height" style="color:green" align="right">Price per child traveler: {{cruise.pricePerChild | currency}}</h5>
+                    </mat-card-content>
+                    <mat-card-content>
+
+                        <h4 class="w3-panel w3-blue w3-opacity">Itinerary</h4>
+                        <div *ngFor = "let dest of cruise.itinerary">
+                            <table>
+                                <tr><h5 class="w3-panel w3-round-xxlarge w3-orange adjust-line-height" style="color:blue">Day {{dest.day}}</h5>
+                                    <td><h5 class="adjust-line-height tab1" >Destination : {{dest.city}}</h5></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><h5 class="adjust-line-height tab1" *ngIf = "dest.country !=''">{{dest.country}}</h5></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><h5 class="adjust-line-height tab1" *ngIf = "dest.portTime != ''">Time : {{dest.portTime}}</h5></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </mat-card-content>
+                    
+                    <mat-card-actions>
+                        <button mat-icon-button color="primary"><mat-icon>thumb_up</mat-icon> Like</button>
+                        <button mat-icon-button color="disabled" class="tab1"><mat-icon>share</mat-icon> Share</button>
+                        <button mat-icon-button color="warn" class="tab2"><mat-icon>favorite</mat-icon> Favorite</button>
+                    </mat-card-actions>
+                    </div>
+                </mat-card>
+                </section>
+        </td>
+        <td class="tab1" >
+                <!-- 2nd -->
+                <section>
+                    <mat-card class="example-card">
+                        <div *ngFor = "let cruise of cruises">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>
+                            <div align="center" class="w3-panel w3-round-xxlarge w3-orange" >
+                                {{cruise.cruiseLine}} {{cruise.shipName}}
+                            </div>
+                             </mat-card-title>
+                          <mat-card-subtitle class="adjust-line-height" >Departing: {{cruise.From}}</mat-card-subtitle>
+                          <mat-card-subtitle class="adjust-line-height" >Visiting: {{cruise.To}}</mat-card-subtitle>
+                        </mat-card-header>
+                        
+                        <img mat-card-image src="../../assets/images/royaltonpuntacana.jpg" alt="CarnivalBoat">
+                        
+                        <mat-card-content>
+                            <h2 class="adjust-line-height" style="text-shadow:1px 1px 0 #444">Majestic Colonial Punta Cana | Air & Vacation Package</h2>
+                            <h5 class="adjust-line-height" style="color:gray">{{cruise.From}}</h5>
+                            <span class="fa fa-star checked" align="center"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <h3 class="adjust-line-height" style="color:blue" align="right">{{cruise.dayLength}} days</h3>
+                            <h5 class="adjust-line-height" style="color:green" align="right">Price per adult traveler: {{cruise.pricePerAdult | currency}}</h5>
+                            <h5 class="adjust-line-height" style="color:green" align="right">Price per child traveler: {{cruise.pricePerChild | currency}}</h5>
+                        </mat-card-content>
+                        <mat-card-content>
+    
+                            <h4 class="w3-panel w3-blue w3-opacity">Itinerary</h4>
+                            <div *ngFor = "let dest of cruise.itinerary">
+                                <table>
+                                    <tr><h5 class="w3-panel w3-round-xxlarge w3-orange adjust-line-height" style="color:blue">Day {{dest.day}}</h5>
+                                        <td><h5 class="adjust-line-height tab1" >Destination : {{dest.city}}</h5></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><h5 class="adjust-line-height tab1" *ngIf = "dest.country !=''">{{dest.country}}</h5></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><h5 class="adjust-line-height tab1" *ngIf = "dest.portTime != ''">Time : {{dest.portTime}}</h5></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </mat-card-content>
+                        
+                        <mat-card-actions>
+                          <button mat-icon-button color="primary"><mat-icon>thumb_up</mat-icon> Like</button>
+                          <button mat-icon-button color="disabled" class="tab1"><mat-icon>share</mat-icon> Share</button>
+                          <button mat-icon-button color="warn" class="tab2"><mat-icon>favorite</mat-icon> Favorite</button>
+                        </mat-card-actions>
+                        </div>
+                    </mat-card>
+                    </section>
+        </td>
+        <td class="tab1" >
+            <!-- 3nd -->
+            <section>
+                <mat-card class="example-card">
+                    <div *ngFor = "let cruise of cruises">
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title>
+                        <div align="center" class="w3-panel w3-round-xxlarge w3-orange" >
+                            {{cruise.cruiseLine}} {{cruise.shipName}}
+                        </div>
+                         </mat-card-title>
+                      <mat-card-subtitle class="adjust-line-height" >Departing: {{cruise.From}}</mat-card-subtitle>
+                      <mat-card-subtitle class="adjust-line-height" >Visiting: {{cruise.To}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img  mat-card-image src="../../assets/images/iberostarGrandParaiso.jpg" alt="CarnivalBoat">
+                    
+                    <mat-card-content>
+                        <h2 class="adjust-line-height" style="text-shadow:1px 1px 0 #444">Iberostar Grand Paraiso | Air & Vacation Package</h2>
+                        <h5 class="adjust-line-height" style="color:gray">{{cruise.From}}</h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <h3 class="adjust-line-height" style="color:blue" align="right">{{cruise.dayLength}} days</h3>
+                        <h5 class="adjust-line-height" style="color:green" align="right">Price per adult traveler: {{cruise.pricePerAdult | currency}}</h5>
+                        <h5 class="adjust-line-height" style="color:green" align="right">Price per child traveler: {{cruise.pricePerChild | currency}}</h5>
+                    </mat-card-content>
+                    <mat-card-content>
+
+                        <h4 class="w3-panel w3-blue w3-opacity">Itinerary</h4>
+                        <div *ngFor = "let dest of cruise.itinerary">
+                            <table>
+                                <tr><h5 class="w3-panel w3-round-xxlarge w3-orange adjust-line-height" style="color:blue">Day {{dest.day}}</h5>
+                                    <td><h5 class="adjust-line-height tab1" >Destination : {{dest.city}}</h5></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><h5 class="adjust-line-height tab1" *ngIf = "dest.country !=''">{{dest.country}}</h5></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><h5 class="adjust-line-height tab1" *ngIf = "dest.portTime != ''">Time : {{dest.portTime}}</h5></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </mat-card-content>
+                    
+                    <mat-card-actions>
+                      <button mat-icon-button color="primary"><mat-icon>thumb_up</mat-icon> Like</button>
+                      <button mat-icon-button color="disabled" class="tab1"><mat-icon>share</mat-icon> Share</button>
+                      <button mat-icon-button color="warn" class="tab2"><mat-icon>favorite</mat-icon> Favorite</button>
+                    </mat-card-actions>
+                    </div>
+                </mat-card>
+                </section>
+    </td>
+    </tr>
+</table>
+
+
+<!-- Vacation Types -->
+<hr/>
+<div align="center" class="tab1">
+    <h1 align="center"><b>Vacation Types</b></h1>
+</div><hr/>
+  <div class="w3-row-padding divcenter" >
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-text-white w3-padding">All Inclusive</div>
+        <img src="../../assets/images/allinclusive.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-text-white w3-padding">Family</div>
+        <img src="../../assets/images/familypic1.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-text-white w3-padding">Adults Only</div>
+        <img src="../../assets/images/adultonly.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding divcenter">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-text-white w3-padding">Honeymoon</div>
+        <img src="../../assets/images/honeymoon.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-text-white w3-padding">Beach</div>
+        <img src="../../assets/images/beach.jpg" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-text-white w3-padding">Casino</div>
+        <img src="../../assets/images/casino.jpg" alt="House" style="width:99%">
+      </div>
+    </div>
+</div>    
+<hr/>
+<footer>
+    <div class="divcenter" style="background-color:rgb(203, 199, 199)">
+            <div class="w3-display-container">
+                <div>
+                    <a class="tab2" routerLink="home"><img  width ="200" alt="Excelsior Travel Agency" src="assets/images/excelsiorlogo4darktrans.gif.png"/></a>
+                    <a class="tab1"><b>FIND US:</b></a><a class="tab0"></a>
+                    <a class="tab1" href="#" class="fa fa-facebook w3-round-xxxlarge w3-blue "></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-pinterest"></a>   
+                  </div>
+                  <div class="tab2 " style="color:rgb(255, 77, 0)"><b>Don't miss out on travel deals</b>
+                    <div style="color:rgb(106, 0, 255)"><h5>Get hot holiday savings, travel inspo, and expert tips & tricks straight to your inbox.</h5></div>
+                </div>
+                <br>
+                <h6 class="tab1" >*Conditions Apply: Additional fees for baggage may apply. 
+                Please contact your airline or refer to its website for detailed information regarding their checked baggage policies, 
+                or alternatively please visit our baggage policy page. Special promotions valid on new bookings only. 
+                Prices are per person, based on double occupancy accommodations. Air-only prices are for roundtrip travel departing 
+                from select cities. Tour and land packages only include round-trip midweek airfare from select cities and do not include 
+                meals unless otherwise indicated. Savings reflect land prices only and vary by resort and travel dates. 
+                Availability is limited. Seats may not be available on all flights or tours. 
+                Rates and/or package prices on airfares, cruises and tours are subject to holiday blackouts, peak period surcharges, 
+                and cancellation charges may be applicable of up to the full price paid depending on the fare and/or package 
+                and when it is cancelled. U.S. or international government imposed taxes and fees of up to $60 may apply on arrivals and 
+                departures depending on the itinerary chosen, and are payable to the appropriate airport authority. 
+                Some fares may be non-refundable, but may be exchanged for a fee of up to $200, plus any additional airfare costs due 
+                to difference in new airfares. Other restrictions may apply and vary by resort, cruise and airline carrier. 
+                Contact <b>Excelsior Travel Agency</b>for further details. <b>Excelsior Travel Agency</b> does not assume responsibility for 
+                any errors or omissions in the content of the offers displayed. Our selected offers are available through our 
+                <b>Excelsior Travel Agency</b> consultants or through our third party independent advisors who are part of our member network,
+                Independent by <b>Excelsior Travel Agency</b>. Certain <b>Excelsior Travel Agency</b> offers, products and 
+                vacation packages are only available via our retail <b>Excelsior Travel Agency</b> consultants. <b>Excelsior Travel Agency</b> 
+                Gift Cards and <b>Excelsior Travel Agency</b> Future Travel Credits are only available and redeemable through our 
+                <b>Excelsior Travel Agency</b> retail consultants.<hr/>
+
+                © Excelsior 2002, All rights reserved. <a href="" title="privacynotice" >Privacy notice</a> | <a href="" title="termsuse" >Terms of Use</a> | 
+                <a href="" title="bookingterms" >Booking terms & conditions</a> | <a href="" title="donotsell" >Do not sell my personal information</a></h6>
+            </div>
+        
+    </div>
+
+</footer>
+<ng-content></ng-content>
+<!-- 
+<div *ngFor = "let cruise of cruises">
+    <h2>{{cruise.cruiseLine}} {{cruise.shipName}}</h2>
+    <h3>Departing: {{cruise.From}}</h3>
+    <h3>Visiting: {{cruise.To}}</h3>
+    <h3>{{cruise.cruiseLine}} {{cruise.shipName}}</h3>
+    <h3>Length: {{cruise.dayLength}} days</h3>
+    <h3>Price per adult traveler: {{cruise.pricePerAdult | currency}}</h3>
+    <h3>Price per child traveler: {{cruise.pricePerChild | currency}}</h3>
+    <h3>Itinerary</h3>
+    <div *ngFor = "let dest of cruise.itinerary">
+        <h4>Day {{dest.day}}</h4>
+        <h4>{{dest.city}}</h4>
+        <h4 *ngIf = "dest.country !=''">{{dest.country}}</h4>
+        <h4 *ngIf = "dest.portTime != ''">{{dest.portTime}}</h4>
+    </div>
+</div> -->
+
+      

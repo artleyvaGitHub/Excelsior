@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+
+    <div class="relative" >    
+
+        <table class="tab2 " border="0" style="background-color:rgb(147, 190, 253); border:25px solid rgb(208, 206, 206); border-radius: 10px;"><br>
+            <tr >
+                <td >
+                    <h1 align="center" style="color:rgb(45, 44, 44)"><b>Login to your accout</b></h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label><mat-icon color="warn">email</mat-icon> Email</mat-label>
+                        <input color="primary" matInput placeholder="johndoe@gmail.com" [formControl]="email" required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label><mat-icon color="warn">password</mat-icon> Password</mat-label>
+                        <input color="primary" matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon color="primary">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field><br>
+                </td>
+            </tr>
+                        
+            <tr>
+                <td>
+                    <button mat-raised-button color = "primary">Login</button>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><br>
+                    <h4 align="center">Don't have an account?  <a style="color:blue" routerLink="register">Sign Up</a></h4>
+                </td>
+            </tr>                           
+        </table>
+
+
+</div>
+<ng-content></ng-content>
+
